@@ -13,3 +13,6 @@ Dalam project juga terlampir design database dalam format .png serta file json p
 
 Pengembang menyadari masih banyak kekurangan dalam penyelesaian project ini, karena disebabkan dikerjakan terlalu
 tergesa-gesa. Tetapi pengembang berharap project ini bisa diakses tanpa adanya kendala.
+
+# Note
+- DDL dapat diakses di resource db.changelog
