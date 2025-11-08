@@ -20,7 +20,8 @@ public class ImageFileService {
         this.userRepo = userRepo;
     }
 
-    private final String uploadDir = "C:\\Users\\admzu\\Documents\\Development\\spring-boot-project\\uploads"; // folder tempat file disimpan
+//    private final String uploadDir = "C:\\Users\\admzu\\Documents\\Development\\spring-boot-project\\uploads"; // folder tempat file disimpan
+    private final String uploadDir = System.getProperty("java.io.tmpdir");
 
     public User saveImage(MultipartFile file, String email) throws IOException {
         // Validasi format file JPG atau

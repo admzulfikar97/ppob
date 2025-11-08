@@ -29,12 +29,6 @@ public class JwtFilter extends OncePerRequestFilter {
                         new UsernamePasswordAuthenticationToken(email, null, Collections.emptyList());
                 SecurityContextHolder.getContext().setAuthentication(auth);
             } catch (Exception e) {
-//                logger.error("JWT Filter error: {}"+ e.getMessage(), e);
-//                response.resetBuffer(); // pastikan buffer kosong
-//                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-//                response.setContentType("application/json;charset=UTF-8");
-//                response.getWriter().write("{\"status\":401,\"message\":\"Token tidak valid atau kadaluwarsa\",\"data\":null}");
-//                response.flushBuffer(); // penting agar Railway benar-benar kirim respons
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 response.setContentType("application/json");
                 response.setCharacterEncoding("UTF-8");
