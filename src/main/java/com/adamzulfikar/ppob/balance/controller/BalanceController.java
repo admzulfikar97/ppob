@@ -16,19 +16,19 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/")
 public class BalanceController {
     @Autowired
     private UserService userService;
     @Autowired
     private BalanceService balanceService;
-    @GetMapping("/balance")
+    @GetMapping("balance")
     public ResponseEntity<?> getUser(Authentication authentication) throws Exception {
         String email = authentication.getPrincipal().toString();
         Balance balance = balanceService.getBalanceByEmail(email);
         return ResponseEntity.ok(new ApiResponse<>(HttpStatus.OK.value(), "Get Balance Berhasil", balance));
     }
-    @PostMapping("/topup")
+    @PostMapping("topup")
     public ResponseEntity<?> topupBalance(Authentication authentication, @Valid @RequestBody TopUpRequest topUpRequest) throws Exception {
         String email = authentication.getPrincipal().toString();
         Balance balance = balanceService.updateBalance(topUpRequest, email);

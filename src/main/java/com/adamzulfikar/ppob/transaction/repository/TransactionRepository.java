@@ -1,6 +1,9 @@
 package com.adamzulfikar.ppob.transaction.repository;
 
 import com.adamzulfikar.ppob.balance.model.Balance;
+import com.adamzulfikar.ppob.transaction.model.Services;
+import com.adamzulfikar.ppob.transaction.model.Transaction;
+import com.adamzulfikar.ppob.user.model.User;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
@@ -13,14 +16,21 @@ public class TransactionRepository {
         this.ds = dataSource;
     }
 
-    public Balance findByUserId(Long userId) {
-        String sql = "SELECT balance FROM user_balance WHERE user_id = ?";
+    public Transaction findByUserId(Long id) {
+        String sql = "SELECT user_id, invoice_number, service_code, service_name, transaction_type, total_amount, created_at" +
+                " FROM transaction WHERE id = ?";
         try (Connection conn = ds.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setLong(1, userId);
+            ps.setLong(1, id);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
-                    return new Balance(
-                            rs.getLong("balance")
+                    return new Transaction(
+                            rs.getLong("user_id"),
+                            rs.getString("invoice_number"),
+                            rs.getString("service_code"),
+                            rs.getString("service_name"),
+                            rs.getString("transaction_type"),
+                            rs.getLong("total_amount"),
+                            rs.getString("created_at")
                     );
                 }else {
                     return null;
@@ -32,16 +42,41 @@ public class TransactionRepository {
             throw new RuntimeException("Database error: " + ex.getMessage());
         }
     }
-    public Long updateBalance(Long topUpAmount, String email) {
-        String sql = "UPDATE user_balance SET balance = ? FROM users WHERE users.id = user_balance.user_id AND users.email= ?";
+    public Services findByServiceCode(String serviceCode) {
+        String sql = "SELECT service_code, service_name, service_icon, service_tariff FROM service WHERE service_code = ?";
+        try (Connection conn = ds.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, serviceCode);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return new Services(
+                            rs.getString("service_code"),
+                            rs.getString("service_name"),
+                            rs.getString("service_icon"),
+                            rs.getLong("service_tariff")
+                    );
+                }else {
+                    return null;
+                }
+            }catch (SQLException ex) {
+                throw new RuntimeException("Database error: " + ex.getMessage());
+            }
+        }catch (SQLException ex) {
+            throw new RuntimeException("Database error: " + ex.getMessage());
+        }
+    }
+    public Long createTransaction(Services services, String invoiceNumber, User user) {
+        String sql = "INSERT INTO transaction (user_id, invoice_number, service_code, service_name, transaction_type, total_amount)" +
+                " VALUES (?, ?, ?, ?, ?, ?)";
         try (Connection conn = ds.getConnection(); PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            ps.setLong(1, topUpAmount);
-            ps.setString(2, email);
+            ps.setLong(1, user.getId());
+            ps.setString(2, invoiceNumber);
+            ps.setString(3, services.getService_code());
+            ps.setString(4, services.getService_name());
+            ps.setString(5, "PAYMENT");
+            ps.setLong(6, services.getService_tariff());
             ps.executeUpdate();
             try (ResultSet rs = ps.getGeneratedKeys()) {
                 if (rs.next()) return rs.getLong(1);
-            }catch (SQLException ex) {
-                throw new RuntimeException("Database error: " + ex.getMessage(), ex);
             }
         }catch (SQLException ex) {
             throw new RuntimeException("Database error: " + ex.getMessage(), ex);

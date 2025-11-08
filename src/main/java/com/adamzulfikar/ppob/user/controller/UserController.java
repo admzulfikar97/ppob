@@ -18,13 +18,13 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/")
 public class UserController {
     @Autowired
     private UserService userService;
     @Autowired
     private ImageFileService imageFileService;
-    @PostMapping("/registration")
+    @PostMapping("registration")
     public ResponseEntity<?> register(@Valid @RequestBody RegisterRequest req) {
         Long id = userService.register(req.first_name, req.last_name, req.email, req.password);
 
@@ -33,14 +33,14 @@ public class UserController {
         registerResponse.setEmail(req.email);
         return ResponseEntity.ok(new ApiResponse<>(HttpStatus.OK.value(), "Registrasi berhasil silahkan login", null));
     }
-    @PostMapping("/login")
+    @PostMapping("login")
     public ResponseEntity<?> login(@Valid @RequestBody LoginRequest req) {
         String res = userService.login(req);
         LoginResponse logres = new LoginResponse();
         logres.setToken(res);
         return ResponseEntity.ok(new ApiResponse<>(HttpStatus.OK.value(), "success", logres));
     }
-    @GetMapping("/profile")
+    @GetMapping("profile")
     public ResponseEntity<?> getUser(Authentication authentication) throws Exception {
         String email = authentication.getPrincipal().toString();
         User user = userService.getUserByEmail(email);
@@ -52,7 +52,7 @@ public class UserController {
         registerResponse.setProfile_image(user.getFilepath());
         return ResponseEntity.ok(new ApiResponse<>(HttpStatus.OK.value(), "registered", registerResponse));
     }
-    @PutMapping("/profile/update")
+    @PutMapping("profile/update")
     public ResponseEntity<?> updateUser(Authentication authentication, @RequestBody UserRequest userRequest) throws Exception {
         String email = authentication.getPrincipal().toString();
         User user = userService.updateUser(userRequest.first_name, userRequest.last_name, email);
@@ -64,7 +64,7 @@ public class UserController {
         registerResponse.setProfile_image(user.getFilepath());
         return ResponseEntity.ok(new ApiResponse<>(HttpStatus.OK.value(), "registered", registerResponse));
     }
-    @PutMapping("/profile/image")
+    @PutMapping("profile/image")
     public ResponseEntity<?> uploadUserImage(Authentication authentication, @RequestParam("file") MultipartFile file) {
         String email = (String) authentication.getPrincipal();
         try {

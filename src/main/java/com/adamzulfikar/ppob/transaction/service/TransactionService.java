@@ -1,0 +1,77 @@
+package com.adamzulfikar.ppob.transaction.service;
+
+import com.adamzulfikar.ppob.balance.model.Balance;
+import com.adamzulfikar.ppob.balance.repository.BalanceRepository;
+import com.adamzulfikar.ppob.common.exception.BadRequestException;
+import com.adamzulfikar.ppob.common.exception.NotFoundException;
+import com.adamzulfikar.ppob.transaction.model.Services;
+import com.adamzulfikar.ppob.transaction.model.Transaction;
+import com.adamzulfikar.ppob.transaction.repository.TransactionRepository;
+import com.adamzulfikar.ppob.user.model.User;
+import com.adamzulfikar.ppob.user.repository.UserRepository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.concurrent.atomic.AtomicInteger;
+
+@Service
+public class TransactionService {
+    private final TransactionRepository transactionRepository;
+    private final UserRepository userRepository;
+    private final BalanceRepository balanceRepository;
+    private static final AtomicInteger counter = new AtomicInteger(0);
+    public TransactionService(TransactionRepository transactionRepository, UserRepository userRepository,
+                              BalanceRepository balanceRepository) {
+        this.transactionRepository = transactionRepository;
+        this.userRepository = userRepository;
+        this.balanceRepository = balanceRepository;
+    }
+
+    @Transactional
+    public Transaction createTransaction(String serviceCode, String email){
+        Services services = transactionRepository.findByServiceCode(serviceCode);
+        if (services == null) throw new RuntimeException("Service not found with service_code: " + serviceCode);
+        User user = userRepository.findByEmail(email);
+        Balance balance = balanceRepository.findByUserId(user.getId());
+        // Hitung balance - service tariff
+        Long remainingBalance = balance.getBalance() - services.getService_tariff();
+        if (remainingBalance < 0) throw new BadRequestException("Balance tidak cukup");
+        balanceRepository.updateBalance(remainingBalance, email);
+        Long id = transactionRepository.createTransaction(services, generateInvoiceNumber(), user);
+        if (id == null) throw new BadRequestException("Transaksi Gagal");
+
+        return transactionRepository.findByUserId(id);
+    }
+
+    public static String generateInvoiceNumber() {
+        String prefix = "INV";
+        String date = new SimpleDateFormat("ddMMyyyy").format(new Date());
+
+        int sequence = counter.incrementAndGet();
+        String sequenceFormatted = String.format("%03d", sequence); // 001, 002, 003 ...
+
+        return prefix + date + "-" + sequenceFormatted;
+    }
+
+//    @Transactional
+//    public User updateUser(String firstname, String lastname, String email) {
+//        Long id;
+//        User user;
+////        try {
+////            user = getUserByEmail(email);
+////        }catch (Exception e) {
+////            throw new NotFoundException("Data tidak ditemukan");
+////        }
+//        id = userRepo.updateUser(firstname, lastname, email);
+//
+//        if (id == null) throw new RuntimeException("failed create user");
+//        try {
+//            user = getUserByEmail(email);
+//        }catch (Exception e) {
+//            throw new NotFoundException("Data tidak ditemukan");
+//        }
+//        return user;
+//    }
+}

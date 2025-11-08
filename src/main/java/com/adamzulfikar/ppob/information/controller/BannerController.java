@@ -17,17 +17,17 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/")
 public class BannerController {
     @Autowired
     private BannerService bannerService;
-    @GetMapping("/banner")
+    @GetMapping("banner")
     public ResponseEntity<?> getBanner() throws Exception {
         List<Banner> banners = bannerService.getListBanner();
 
         return ResponseEntity.ok(new ApiResponse<>(HttpStatus.OK.value(), "Sukses", banners));
     }
-    @GetMapping("/service")
+    @GetMapping("service")
     public ResponseEntity<?> getService(Authentication authentication) throws Exception {
         List<ServicePPOB> servicePPOBList = bannerService.getListService();
 
