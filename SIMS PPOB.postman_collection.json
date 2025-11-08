@@ -1,0 +1,935 @@
+{
+	"info": {
+		"_postman_id": "651f1605-3ceb-4040-a605-a8be684a9b2e",
+		"name": "SIMS PPOB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20246468"
+	},
+	"item": [
+		{
+			"name": "Membership",
+			"item": [
+				{
+					"name": "Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Adil\",\r\n    \"last_name\": \"A\",\r\n    \"email\": \"test@gmail.com\",\r\n    \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1997/api/registration",
+							"host": [
+								"localhost"
+							],
+							"port": "1997",
+							"path": [
+								"api",
+								"registration"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Registration",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"Adil\",\r\n    \"last_name\": \"A\",\r\n    \"email\": \"test@gmail.com\",\r\n    \"password\": \"password123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1997/api/registration",
+									"host": [
+										"localhost"
+									],
+									"port": "1997",
+									"path": [
+										"api",
+										"registration"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Nov 2025 14:40:39 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Registrasi berhasil silahkan login\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@gmail.com\",\r\n    \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1997/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "1997",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"test@gmail.com\",\r\n    \"password\": \"password123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1997/api/login",
+									"host": [
+										"localhost"
+									],
+									"port": "1997",
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Nov 2025 14:41:14 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"success\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYxMjg3NCwiZXhwIjoxNzYyNjE2NDc0fQ.M4jqZ0fo1Eq-YqNKYImF24Kk1I2tc6rLMPV9Z6gfRsg\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get User By Email",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYxMjg3NCwiZXhwIjoxNzYyNjE2NDc0fQ.M4jqZ0fo1Eq-YqNKYImF24Kk1I2tc6rLMPV9Z6gfRsg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:1997/api/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "1997",
+							"path": [
+								"api",
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get User By Email",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3aXlhemFhYW1AZ21haWwuY29tIiwiaWF0IjoxNzYyNjExNzA5LCJleHAiOjE3NjI2MTUzMDl9.PAeaXOg_D_oxf2F6HwIgKHyN-EhlIaQZuqtfoAslaSQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:1997/api/profile",
+									"host": [
+										"localhost"
+									],
+									"port": "1997",
+									"path": [
+										"api",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Nov 2025 14:24:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"registered\",\n    \"data\": {\n        \"email\": \"wiyazaaam@gmail.com\",\n        \"first_name\": \"Adamupdated\",\n        \"last_name\": \"Zulfikar\",\n        \"profile_image\": \"C:\\\\Users\\\\admzu\\\\Documents\\\\Development\\\\spring-boot-project\\\\uploads\\\\Drawing_assist_20250508_143209.jpg\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update profile",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYxMjg3NCwiZXhwIjoxNzYyNjE2NDc0fQ.M4jqZ0fo1Eq-YqNKYImF24Kk1I2tc6rLMPV9Z6gfRsg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Budi\",\r\n    \"last_name\": \"G\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1997/api/profile/update",
+							"host": [
+								"localhost"
+							],
+							"port": "1997",
+							"path": [
+								"api",
+								"profile",
+								"update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update profile",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYxMjg3NCwiZXhwIjoxNzYyNjE2NDc0fQ.M4jqZ0fo1Eq-YqNKYImF24Kk1I2tc6rLMPV9Z6gfRsg",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"Budi\",\r\n    \"last_name\": \"G\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1997/api/profile/update",
+									"host": [
+										"localhost"
+									],
+									"port": "1997",
+									"path": [
+										"api",
+										"profile",
+										"update"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Nov 2025 14:42:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"registered\",\n    \"data\": {\n        \"email\": \"test@gmail.com\",\n        \"first_name\": \"Budi\",\n        \"last_name\": \"G\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Upload",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3aXlhemFhYW1AZ21haWwuY29tIiwiaWF0IjoxNzYyNjExNzA5LCJleHAiOjE3NjI2MTUzMDl9.PAeaXOg_D_oxf2F6HwIgKHyN-EhlIaQZuqtfoAslaSQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/admzu/Pictures/Profile/Drawing_assist_20250508_143209.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:1997/api/profile/image",
+							"host": [
+								"localhost"
+							],
+							"port": "1997",
+							"path": [
+								"api",
+								"profile",
+								"image"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Upload",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3aXlhemFhYW1AZ21haWwuY29tIiwiaWF0IjoxNzYyNjExNzA5LCJleHAiOjE3NjI2MTUzMDl9.PAeaXOg_D_oxf2F6HwIgKHyN-EhlIaQZuqtfoAslaSQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/admzu/Pictures/Profile/Drawing_assist_20250508_143209.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:1997/api/profile/image",
+									"host": [
+										"localhost"
+									],
+									"port": "1997",
+									"path": [
+										"api",
+										"profile",
+										"image"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Nov 2025 14:23:49 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Upload success\",\n    \"data\": {\n        \"email\": \"wiyazaaam@gmail.com\",\n        \"first_name\": \"Adamupdated\",\n        \"last_name\": \"Zulfikar\",\n        \"profile_image\": \"C:\\\\Users\\\\admzu\\\\Documents\\\\Development\\\\spring-boot-project\\\\uploads\\\\Drawing_assist_20250508_143209.jpg\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Information",
+			"item": [
+				{
+					"name": "Banner",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/admzu/Pictures/Profile/AVA.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:1997/api/banner",
+							"host": [
+								"localhost"
+							],
+							"port": "1997",
+							"path": [
+								"api",
+								"banner"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Banner",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/admzu/Pictures/Profile/AVA.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:1997/api/banner",
+									"host": [
+										"localhost"
+									],
+									"port": "1997",
+									"path": [
+										"api",
+										"banner"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Nov 2025 14:25:39 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Sukses\",\n    \"data\": [\n        {\n            \"banner_name\": \"Banner 1\",\n            \"banner_image\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"description\": \"Lerem Ipsum Dolor sit amet\"\n        },\n        {\n            \"banner_name\": \"Banner 2\",\n            \"banner_image\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"description\": \"Lerem Ipsum Dolor sit amet\"\n        },\n        {\n            \"banner_name\": \"Banner 3\",\n            \"banner_image\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"description\": \"Lerem Ipsum Dolor sit amet\"\n        },\n        {\n            \"banner_name\": \"Banner 4\",\n            \"banner_image\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"description\": \"Lerem Ipsum Dolor sit amet\"\n        },\n        {\n            \"banner_name\": \"Banner 5\",\n            \"banner_image\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"description\": \"Lerem Ipsum Dolor sit amet\"\n        },\n        {\n            \"banner_name\": \"Banner 6\",\n            \"banner_image\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"description\": \"Lerem Ipsum Dolor sit amet\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Service",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3aXlhemFhYW1AZ21haWwuY29tIiwiaWF0IjoxNzYyNjExNzA5LCJleHAiOjE3NjI2MTUzMDl9.PAeaXOg_D_oxf2F6HwIgKHyN-EhlIaQZuqtfoAslaSQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:1997/api/service",
+							"host": [
+								"localhost"
+							],
+							"port": "1997",
+							"path": [
+								"api",
+								"service"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Service",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3aXlhemFhYW1AZ21haWwuY29tIiwiaWF0IjoxNzYyNjExNzA5LCJleHAiOjE3NjI2MTUzMDl9.PAeaXOg_D_oxf2F6HwIgKHyN-EhlIaQZuqtfoAslaSQ",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:1997/api/service",
+									"host": [
+										"localhost"
+									],
+									"port": "1997",
+									"path": [
+										"api",
+										"service"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Nov 2025 14:26:52 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Sukses\",\n    \"data\": [\n        {\n            \"service_code\": \"PAJAK\",\n            \"service_name\": \"Pajak PBB\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tariff\": 40000\n        },\n        {\n            \"service_code\": \"PLN\",\n            \"service_name\": \"Listrik\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tariff\": 10000\n        },\n        {\n            \"service_code\": \"PDAM\",\n            \"service_name\": \"PDAM Berlangganan\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tariff\": 40000\n        },\n        {\n            \"service_code\": \"PULSA\",\n            \"service_name\": \"Pulsa\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tariff\": 40000\n        },\n        {\n            \"service_code\": \"PGN\",\n            \"service_name\": \"PGN Berlangganan\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tariff\": 50000\n        },\n        {\n            \"service_code\": \"Musik\",\n            \"service_name\": \"Musik Berlangganan\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tariff\": 50000\n        },\n        {\n            \"service_code\": \"TV\",\n            \"service_name\": \"TV Berlangganan\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tariff\": 50000\n        },\n        {\n            \"service_code\": \"PAKET_DATA\",\n            \"service_name\": \"Paket Data\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tariff\": 50000\n        },\n        {\n            \"service_code\": \"VOUCHER_GAME\",\n            \"service_name\": \"Voucher Game\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tariff\": 100000\n        },\n        {\n            \"service_code\": \"VOUCHER_MAKANAN\",\n            \"service_name\": \"Voucher Makanan\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tariff\": 100000\n        },\n        {\n            \"service_code\": \"QURBAN\",\n            \"service_name\": \"Qurban\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tariff\": 200000\n        },\n        {\n            \"service_code\": \"ZAKAT\",\n            \"service_name\": \"Zakat\",\n            \"service_icon\": \"https://nutech-integrasi.app/dummy.jpg\",\n            \"service_tariff\": 300000\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Balance",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYxMjg3NCwiZXhwIjoxNzYyNjE2NDc0fQ.M4jqZ0fo1Eq-YqNKYImF24Kk1I2tc6rLMPV9Z6gfRsg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:1997/api/balance",
+							"host": [
+								"localhost"
+							],
+							"port": "1997",
+							"path": [
+								"api",
+								"balance"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYxMjg3NCwiZXhwIjoxNzYyNjE2NDc0fQ.M4jqZ0fo1Eq-YqNKYImF24Kk1I2tc6rLMPV9Z6gfRsg",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:1997/api/balance",
+									"host": [
+										"localhost"
+									],
+									"port": "1997",
+									"path": [
+										"api",
+										"balance"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Nov 2025 15:09:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Get Balance Berhasil\",\n    \"data\": {\n        \"balance\": 5000\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "TopUp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYxMjg3NCwiZXhwIjoxNzYyNjE2NDc0fQ.M4jqZ0fo1Eq-YqNKYImF24Kk1I2tc6rLMPV9Z6gfRsg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"top_up_amount\": 10000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:1997/api/topup",
+							"host": [
+								"localhost"
+							],
+							"port": "1997",
+							"path": [
+								"api",
+								"topup"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
