@@ -2,19 +2,8 @@ spring:
   application:
     name: ppob
 
-  datasource:
-    url: jdbc:postgresql://localhost:5432/project_ppob_db
-    username: postgres
-    password: paramadaksa
-    driver-class-name: org.postgresql.Driver
-
-  liquibase:
-    change-log: classpath:db/changelog/db.changelog-master.yaml
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:local}  # default ke 'local' kalau tidak diset
 
 server:
-  port: 1997
-
-spring.jpa:
-  generate-ddl: false
-  hibernate:
-    ddl-auto: none
+  port: ${PORT:1997}
