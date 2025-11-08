@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"first_name\": \"Adil\",\r\n    \"last_name\": \"A\",\r\n    \"email\": \"test@gmail.com\",\r\n    \"password\": \"password123\"\r\n}",
+							"raw": "{\r\n    \"first_name\": \"Sumi\",\r\n    \"last_name\": \"Masen\",\r\n    \"email\": \"test@gmail.com\",\r\n    \"password\": \"password123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -24,13 +24,15 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:1997/api/registration",
+							"raw": "https://ppob-production-7039.up.railway.app/registration",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ppob-production-7039",
+								"up",
+								"railway",
+								"app"
 							],
-							"port": "1997",
 							"path": [
-								"api",
 								"registration"
 							]
 						}
@@ -64,7 +66,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "X-Content-Type-Options",
@@ -131,13 +133,15 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:1997/api/login",
+							"raw": "https://ppob-production-7039.up.railway.app/login",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ppob-production-7039",
+								"up",
+								"railway",
+								"app"
 							],
-							"port": "1997",
 							"path": [
-								"api",
 								"login"
 							]
 						}
@@ -171,7 +175,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "X-Content-Type-Options",
@@ -233,18 +237,20 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYxMjg3NCwiZXhwIjoxNzYyNjE2NDc0fQ.M4jqZ0fo1Eq-YqNKYImF24Kk1I2tc6rLMPV9Z6gfRsg",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYzNjA4NiwiZXhwIjoxNzYyNjM5Njg2fQ.DGiXJDEGVZMZ0M6sMZVLOciw1ecIWKCfHgVUwyENAs8",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "localhost:1997/api/profile",
+							"raw": "https://ppob-production-7039.up.railway.app/profile",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ppob-production-7039",
+								"up",
+								"railway",
+								"app"
 							],
-							"port": "1997",
 							"path": [
-								"api",
 								"profile"
 							]
 						}
@@ -275,7 +281,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "X-Content-Type-Options",
@@ -334,7 +340,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYxMjg3NCwiZXhwIjoxNzYyNjE2NDc0fQ.M4jqZ0fo1Eq-YqNKYImF24Kk1I2tc6rLMPV9Z6gfRsg",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYzNjA4NiwiZXhwIjoxNzYyNjM5Njg2fQ.DGiXJDEGVZMZ0M6sMZVLOciw1ecIWKCfHgVUwyENAs8",
 								"type": "text"
 							}
 						],
@@ -348,13 +354,15 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:1997/api/profile/update",
+							"raw": "https://ppob-production-7039.up.railway.app/profile/update",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ppob-production-7039",
+								"up",
+								"railway",
+								"app"
 							],
-							"port": "1997",
 							"path": [
-								"api",
 								"profile",
 								"update"
 							]
@@ -396,7 +404,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "X-Content-Type-Options",
@@ -455,7 +463,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3aXlhemFhYW1AZ21haWwuY29tIiwiaWF0IjoxNzYyNjExNzA5LCJleHAiOjE3NjI2MTUzMDl9.PAeaXOg_D_oxf2F6HwIgKHyN-EhlIaQZuqtfoAslaSQ",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYzNjA4NiwiZXhwIjoxNzYyNjM5Njg2fQ.DGiXJDEGVZMZ0M6sMZVLOciw1ecIWKCfHgVUwyENAs8",
 								"type": "text"
 							}
 						],
@@ -465,18 +473,20 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/C:/Users/admzu/Pictures/Profile/Drawing_assist_20250508_143209.jpg"
+									"src": "/C:/Users/admzu/Pictures/Profile/AVA.jpg"
 								}
 							]
 						},
 						"url": {
-							"raw": "localhost:1997/api/profile/image",
+							"raw": "https://ppob-production-7039.up.railway.app/profile/image",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ppob-production-7039",
+								"up",
+								"railway",
+								"app"
 							],
-							"port": "1997",
 							"path": [
-								"api",
 								"profile",
 								"image"
 							]
@@ -519,7 +529,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "X-Content-Type-Options",
@@ -595,13 +605,15 @@
 							]
 						},
 						"url": {
-							"raw": "localhost:1997/api/banner",
+							"raw": "https://ppob-production-7039.up.railway.app/banner",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ppob-production-7039",
+								"up",
+								"railway",
+								"app"
 							],
-							"port": "1997",
 							"path": [
-								"api",
 								"banner"
 							]
 						}
@@ -636,7 +648,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "X-Content-Type-Options",
@@ -695,18 +707,20 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ3aXlhemFhYW1AZ21haWwuY29tIiwiaWF0IjoxNzYyNjExNzA5LCJleHAiOjE3NjI2MTUzMDl9.PAeaXOg_D_oxf2F6HwIgKHyN-EhlIaQZuqtfoAslaSQ",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYzNjA4NiwiZXhwIjoxNzYyNjM5Njg2fQ.DGiXJDEGVZMZ0M6sMZVLOciw1ecIWKCfHgVUwyENAs8",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "localhost:1997/api/service",
+							"raw": "https://ppob-production-7039.up.railway.app/service",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ppob-production-7039",
+								"up",
+								"railway",
+								"app"
 							],
-							"port": "1997",
 							"path": [
-								"api",
 								"service"
 							]
 						}
@@ -737,7 +751,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "X-Content-Type-Options",
@@ -801,18 +815,20 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYxMjg3NCwiZXhwIjoxNzYyNjE2NDc0fQ.M4jqZ0fo1Eq-YqNKYImF24Kk1I2tc6rLMPV9Z6gfRsg",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYzNjA4NiwiZXhwIjoxNzYyNjM5Njg2fQ.DGiXJDEGVZMZ0M6sMZVLOciw1ecIWKCfHgVUwyENAs8",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "localhost:1997/api/balance",
+							"raw": "https://ppob-production-7039.up.railway.app/balance",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ppob-production-7039",
+								"up",
+								"railway",
+								"app"
 							],
-							"port": "1997",
 							"path": [
-								"api",
 								"balance"
 							]
 						}
@@ -843,7 +859,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "X-Content-Type-Options",
@@ -902,13 +918,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYxMjg3NCwiZXhwIjoxNzYyNjE2NDc0fQ.M4jqZ0fo1Eq-YqNKYImF24Kk1I2tc6rLMPV9Z6gfRsg",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYzNjA4NiwiZXhwIjoxNzYyNjM5Njg2fQ.DGiXJDEGVZMZ0M6sMZVLOciw1ecIWKCfHgVUwyENAs8",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"top_up_amount\": 10000\r\n}",
+							"raw": "{\r\n    \"top_up_amount\": 100000\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -916,18 +932,303 @@
 							}
 						},
 						"url": {
-							"raw": "localhost:1997/api/topup",
+							"raw": "https://ppob-production-7039.up.railway.app/topup",
+							"protocol": "https",
 							"host": [
-								"localhost"
+								"ppob-production-7039",
+								"up",
+								"railway",
+								"app"
 							],
-							"port": "1997",
 							"path": [
-								"api",
 								"topup"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0MUBnbWFpbC5jb20iLCJpYXQiOjE3NjI2MzUwOTcsImV4cCI6MTc2MjYzODY5N30.G3OYjp9u8t6DcuHy5PpD2MqXkyrRWttKxe5yVs8LOvk",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"top_up_amount\": 1000000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1997/topup",
+									"host": [
+										"localhost"
+									],
+									"port": "1997",
+									"path": [
+										"topup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Nov 2025 20:53:00 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Top Up Balance berhasil\",\n    \"data\": {\n        \"balance\": 1000000\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Transaction",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYzNjA4NiwiZXhwIjoxNzYyNjM5Njg2fQ.DGiXJDEGVZMZ0M6sMZVLOciw1ecIWKCfHgVUwyENAs8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service_code\": \"PGN\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ppob-production-7039.up.railway.app/transaction",
+							"protocol": "https",
+							"host": [
+								"ppob-production-7039",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYzNjA4NiwiZXhwIjoxNzYyNjM5Njg2fQ.DGiXJDEGVZMZ0M6sMZVLOciw1ecIWKCfHgVUwyENAs8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"service_code\": \"PGN\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1997/transaction",
+									"host": [
+										"localhost"
+									],
+									"port": "1997",
+									"path": [
+										"transaction"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Nov 2025 21:11:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 400,\n    \"message\": \"Balance tidak cukup\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGdtYWlsLmNvbSIsImlhdCI6MTc2MjYzNjA4NiwiZXhwIjoxNzYyNjM5Njg2fQ.DGiXJDEGVZMZ0M6sMZVLOciw1ecIWKCfHgVUwyENAs8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"service_code\": \"PGN\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:1997/transaction",
+									"host": [
+										"localhost"
+									],
+									"port": "1997",
+									"path": [
+										"transaction"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 08 Nov 2025 21:12:23 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": 200,\n    \"message\": \"Transaksi Berhasil\",\n    \"data\": {\n        \"user_id\": 1,\n        \"invoice_number\": \"INV09112025-002\",\n        \"service_code\": \"PGN\",\n        \"service_name\": \"PGN Berlangganan\",\n        \"transaction_type\": \"PAYMENT\",\n        \"total_amount\": 50000,\n        \"created_at\": \"2025-11-09 04:12:23.684226\"\n    }\n}"
+						}
+					]
 				}
 			]
 		}
