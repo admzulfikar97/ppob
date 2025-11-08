@@ -1,6 +1,5 @@
 package com.adamzulfikar.ppob.transaction.repository;
 
-import com.adamzulfikar.ppob.balance.model.Balance;
 import com.adamzulfikar.ppob.transaction.model.Services;
 import com.adamzulfikar.ppob.transaction.model.Transaction;
 import com.adamzulfikar.ppob.user.model.User;
@@ -8,6 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public class TransactionRepository {
@@ -82,5 +83,37 @@ public class TransactionRepository {
             throw new RuntimeException("Database error: " + ex.getMessage(), ex);
         }
         return null;
+    }
+
+    public List<Transaction> listTransactionByUserId(Long userId, int offset, int limit) {
+        String sql = "SELECT user_id, invoice_number, service_code, service_name, transaction_type, total_amount, created_at " +
+                "FROM transaction WHERE user_id = ? ORDER BY created_at DESC LIMIT ? OFFSET ?";
+
+        List<Transaction> transactionList = new ArrayList<>();
+        try (Connection conn = ds.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setLong(1, userId);
+            ps.setLong(2, limit);
+            ps.setLong(3, offset);
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Transaction transaction = new Transaction(
+                            rs.getLong("user_id"),
+                            rs.getString("invoice_number"),
+                            rs.getString("service_code"),
+                            rs.getString("service_name"),
+                            rs.getString("transaction_type"),
+                            rs.getLong("total_amount"),
+                            rs.getString("created_at")
+                    );
+                    transactionList.add(transaction);
+                }
+            }catch (SQLException ex) {
+                throw new RuntimeException("Database error: " + ex.getMessage());
+            }
+        }catch (SQLException ex) {
+            throw new RuntimeException("Database error: " + ex.getMessage());
+        }
+
+        return transactionList;
     }
 }
