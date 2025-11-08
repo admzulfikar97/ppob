@@ -1,9 +1,14 @@
 spring:
-  application:
-    name: ppob
+  datasource:
+    url: jdbc:postgresql://tramway.proxy.rlwy.net:30560/project_ppob_db
+    username: ${PGUSER}
+    password: ${PGPASSWORD}
+    driver-class-name: org.postgresql.Driver
 
-  profiles:
-    active: ${SPRING_PROFILES_ACTIVE:local}  # default ke 'local' kalau tidak diset
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
 
-server:
-  port: ${PORT:1997}
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
