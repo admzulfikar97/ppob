@@ -88,7 +88,7 @@ public class UserController {
                     .body(new ApiResponse<>(HttpStatus.BAD_REQUEST.value(), e.getMessage(), null));
         }
     }
-    @GetMapping("/{filename:.+}")
+    @GetMapping("images/{filename:.+}")
     public ResponseEntity<Resource> getImage(@PathVariable String filename) {
         try {
             Path filePath = Paths.get("/data/uploads").resolve(filename).normalize();
