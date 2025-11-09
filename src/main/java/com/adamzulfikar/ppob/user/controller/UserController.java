@@ -11,6 +11,7 @@ import com.adamzulfikar.ppob.user.service.ImageFileService;
 import com.adamzulfikar.ppob.user.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.http.HttpHeaders;
@@ -32,6 +33,8 @@ public class UserController {
     private UserService userService;
     @Autowired
     private ImageFileService imageFileService;
+    @Value("${upload.dir}")
+    private String uploadDir;
     @PostMapping("registration")
     public ResponseEntity<?> register(@Valid @RequestBody RegisterRequest req) {
         Long id = userService.register(req.first_name, req.last_name, req.email, req.password);
@@ -91,7 +94,7 @@ public class UserController {
     @GetMapping("images/{filename:.+}")
     public ResponseEntity<Resource> getImage(@PathVariable String filename) {
         try {
-            Path filePath = Paths.get("/data/uploads").resolve(filename).normalize();
+            Path filePath = Paths.get(uploadDir).resolve(filename).normalize();
             Resource resource = new UrlResource(filePath.toUri());
 
             if (!resource.exists()) {
