@@ -21,7 +21,8 @@ public class ImageFileService {
     }
 
 //    private final String uploadDir = "C:\\Users\\admzu\\Documents\\Development\\spring-boot-project\\uploads"; // folder tempat file disimpan
-    private final String uploadDir = System.getProperty("java.io.tmpdir");
+//    private final String uploadDir = System.getProperty("java.io.tmpdir");
+    private final String uploadDir = "/data/uploads";
 
     public User saveImage(MultipartFile file, String email) throws IOException {
         User user  = userRepo.findByEmail(email);
