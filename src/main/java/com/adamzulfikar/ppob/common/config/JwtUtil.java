@@ -14,7 +14,7 @@ public class JwtUtil {
         return Jwts.builder()
                 .setSubject(email)
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60)) // 1 jam
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 12)) // 1 jam
                 .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
                 .compact();
     }

@@ -18,14 +18,13 @@ public class TransactionRepository {
     }
 
     public Transaction findByUserId(Long id) {
-        String sql = "SELECT user_id, invoice_number, service_code, service_name, transaction_type, total_amount, created_at" +
+        String sql = "SELECT invoice_number, service_code, service_name, transaction_type, total_amount, created_at" +
                 " FROM transaction WHERE id = ?";
         try (Connection conn = ds.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setLong(1, id);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     return new Transaction(
-                            rs.getLong("user_id"),
                             rs.getString("invoice_number"),
                             rs.getString("service_code"),
                             rs.getString("service_name"),
@@ -86,18 +85,24 @@ public class TransactionRepository {
     }
 
     public List<Transaction> listTransactionByUserId(Long userId, int offset, int limit) {
-        String sql = "SELECT user_id, invoice_number, service_code, service_name, transaction_type, total_amount, created_at " +
-                "FROM transaction WHERE user_id = ? ORDER BY created_at DESC LIMIT ? OFFSET ?";
+        String str = "LIMIT ?";
+        if (limit == 0) str = "";
+        String sql = "SELECT invoice_number, service_code, service_name, transaction_type, total_amount, created_at " +
+                "FROM transaction WHERE user_id = ? ORDER BY created_at DESC "+str+" OFFSET ?";
 
         List<Transaction> transactionList = new ArrayList<>();
         try (Connection conn = ds.getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setLong(1, userId);
-            ps.setLong(2, limit);
-            ps.setLong(3, offset);
+            if (limit == 0) {
+                ps.setLong(1, userId);
+                ps.setLong(2, offset);
+            }else {
+                ps.setLong(1, userId);
+                ps.setLong(2, limit);
+                ps.setLong(3, offset);
+            }
             try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
                     Transaction transaction = new Transaction(
-                            rs.getLong("user_id"),
                             rs.getString("invoice_number"),
                             rs.getString("service_code"),
                             rs.getString("service_name"),

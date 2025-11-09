@@ -3,11 +3,8 @@ package com.adamzulfikar.ppob.user.service;
 import com.adamzulfikar.ppob.balance.service.BalanceService;
 import com.adamzulfikar.ppob.common.config.JwtUtil;
 import com.adamzulfikar.ppob.common.exception.BadRequestException;
-import com.adamzulfikar.ppob.common.exception.GlobalExceptionHandler;
 import com.adamzulfikar.ppob.common.exception.NotFoundException;
-import com.adamzulfikar.ppob.common.exception.UnauthorizedException;
 import com.adamzulfikar.ppob.user.dto.request.LoginRequest;
-import com.adamzulfikar.ppob.user.dto.request.RegisterRequest;
 import com.adamzulfikar.ppob.user.model.User;
 import com.adamzulfikar.ppob.user.repository.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -48,20 +45,16 @@ public class UserService {
     }
     public User getUserByEmail(String email) throws Exception {
         User user = userRepo.findByEmail(email);
-        if (user == null) throw new RuntimeException("User not found with email: " + email);
+        if (user == null) throw new NotFoundException("Email tidak ditemukan");
         return user;
     }
     @Transactional
     public User updateUser(String firstname, String lastname, String email) {
         Long id;
-        User user;
-//        try {
-//            user = getUserByEmail(email);
-//        }catch (Exception e) {
-//            throw new NotFoundException("Data tidak ditemukan");
-//        }
-        id = userRepo.updateUser(firstname, lastname, email);
+        User user = userRepo.findByEmail(email);
+        if (user == null) throw new NotFoundException("Email tidak ditemukan");
 
+        id = userRepo.updateUser(firstname, lastname, email);
         if (id == null) throw new RuntimeException("failed create user");
         try {
             user = getUserByEmail(email);

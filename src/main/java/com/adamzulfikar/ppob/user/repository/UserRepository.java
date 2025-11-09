@@ -1,6 +1,5 @@
 package com.adamzulfikar.ppob.user.repository;
 
-import com.adamzulfikar.ppob.common.exception.BadRequestException;
 import com.adamzulfikar.ppob.user.model.User;
 import org.springframework.stereotype.Repository;
 

@@ -1,10 +1,12 @@
 package com.adamzulfikar.ppob.transaction.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Transaction {
     private Long user_id;
     private String invoice_number;
@@ -19,6 +21,15 @@ public class Transaction {
     public Transaction(Long user_id, String invoice_number, String service_code, String service_name, String transaction_type
             , Long total_amount, String created_at) {
         this.user_id = user_id;
+        this.invoice_number = invoice_number;
+        this.service_code = service_code;
+        this.service_name = service_name;
+        this.transaction_type = transaction_type;
+        this.total_amount = total_amount;
+        this.created_at = created_at;
+    }
+    public Transaction(String invoice_number, String service_code, String service_name, String transaction_type
+            , Long total_amount, String created_at) {
         this.invoice_number = invoice_number;
         this.service_code = service_code;
         this.service_name = service_name;

@@ -62,22 +62,4 @@ public class BalanceService {
         }
         return balance;
     }
-
-    public Long updateUser(String firstname, String lastname, String email) {
-        String sql = "UPDATE users SET first_name = ?, last_name = ? WHERE email= ?";
-        try (Connection conn = ds.getConnection(); PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            ps.setString(1, firstname);
-            ps.setString(2, lastname);
-            ps.setString(3, email);
-            ps.executeUpdate();
-            try (ResultSet rs = ps.getGeneratedKeys()) {
-                if (rs.next()) return rs.getLong(1);
-            }catch (SQLException ex) {
-                throw new RuntimeException("Database error: " + ex.getMessage(), ex);
-            }
-        }catch (SQLException ex) {
-            throw new RuntimeException("Database error: " + ex.getMessage(), ex);
-        }
-        return null;
-    }
 }

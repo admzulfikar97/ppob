@@ -1,14 +1,10 @@
 package com.adamzulfikar.ppob.balance.repository;
 
 import com.adamzulfikar.ppob.balance.model.Balance;
-import com.adamzulfikar.ppob.information.model.Banner;
-import com.adamzulfikar.ppob.user.model.User;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Repository
 public class BalanceRepository {

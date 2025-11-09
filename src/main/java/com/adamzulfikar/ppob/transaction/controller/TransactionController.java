@@ -29,7 +29,7 @@ public class TransactionController {
     }
     @GetMapping("transaction/history")
     public ResponseEntity<?> listTransaction(Authentication authentication, @RequestParam(defaultValue = "0") int offset,
-                                             @RequestParam(defaultValue = "5") int limit) throws Exception {
+                                             @RequestParam(defaultValue = "0") int limit) throws Exception {
         String email = authentication.getPrincipal().toString();
         List<Transaction> transactionList = transactionService.getListTransaction(email, limit, offset);
         Map<String, Object> data = new LinkedHashMap<>();

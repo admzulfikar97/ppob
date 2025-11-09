@@ -1,7 +1,7 @@
 package com.adamzulfikar.ppob.user.service;
 
-import com.adamzulfikar.ppob.common.config.JwtUtil;
 import com.adamzulfikar.ppob.common.exception.BadRequestException;
+import com.adamzulfikar.ppob.common.exception.NotFoundException;
 import com.adamzulfikar.ppob.user.model.User;
 import com.adamzulfikar.ppob.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +24,8 @@ public class ImageFileService {
     private final String uploadDir = System.getProperty("java.io.tmpdir");
 
     public User saveImage(MultipartFile file, String email) throws IOException {
+        User user  = userRepo.findByEmail(email);
+        if (user == null) throw new NotFoundException("Email tidak ditemukan");
         // Validasi format file JPG atau
         if (!file.getContentType().equalsIgnoreCase("image/jpg") && !file.getContentType().equalsIgnoreCase("image/jpeg")
                 && !file.getContentType().equalsIgnoreCase("image/png")) {

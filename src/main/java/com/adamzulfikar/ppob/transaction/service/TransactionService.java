@@ -3,6 +3,7 @@ package com.adamzulfikar.ppob.transaction.service;
 import com.adamzulfikar.ppob.balance.model.Balance;
 import com.adamzulfikar.ppob.balance.repository.BalanceRepository;
 import com.adamzulfikar.ppob.common.exception.BadRequestException;
+import com.adamzulfikar.ppob.common.exception.NotFoundException;
 import com.adamzulfikar.ppob.transaction.model.Services;
 import com.adamzulfikar.ppob.transaction.model.Transaction;
 import com.adamzulfikar.ppob.transaction.repository.TransactionRepository;
@@ -31,9 +32,11 @@ public class TransactionService {
 
     @Transactional
     public Transaction createTransaction(String serviceCode, String email){
+        User user = userRepository.findByEmail(email);
+        if (user == null) throw new NotFoundException("Email tidak ditemukan");
         Services services = transactionRepository.findByServiceCode(serviceCode);
         if (services == null) throw new RuntimeException("Service not found with service_code: " + serviceCode);
-        User user = userRepository.findByEmail(email);
+        if (!services.getService_code().equals(serviceCode)) throw new BadRequestException("Service ataus Layanan tidak ditemukan");
         Balance balance = balanceRepository.findByUserId(user.getId());
         // Hitung balance - service tariff
         Long remainingBalance = balance.getBalance() - services.getService_tariff();
@@ -46,6 +49,7 @@ public class TransactionService {
     }
     public List<Transaction> getListTransaction(String email, int limit, int offset) throws Exception {
         User user = userRepository.findByEmail(email);
+        if (user == null) throw new NotFoundException("Email tidak ditemukan");
         List<Transaction> servicePPOBS = transactionRepository.listTransactionByUserId(user.getId(), offset, limit);
         if (servicePPOBS == null) throw new RuntimeException("Banner not found");
         return servicePPOBS;
